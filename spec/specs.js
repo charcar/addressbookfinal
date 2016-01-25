@@ -3,7 +3,7 @@ describe('Contact', function() {
   var testContact = new Contact ("Mike","Lor","235 SE.Street Portland, OR");
   expect(testContact.firstName).to.equal("Mike");
   expect(testContact.lastName).to.equal("Lor");
-  expect(testContact.addresses).to.eql(['235 SE.Street Portland, OR']);
+  expect(testContact.address).to.eql(['235 SE.Street Portland, OR']);
   });
 
   it("adds the fullName method to a contact", function(){

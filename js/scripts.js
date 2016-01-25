@@ -1,14 +1,13 @@
-function Contact(firstName, lastName, address) {
+function Contact(firstName, lastName) {
   this.firstName = firstName;
   this.lastName = lastName;
-  this.address = ['235 SE.Street Portland, OR'];
+  this.addresses = [];
+  console.log(address);
 }
 
 Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
-}
-
-
+};
 
 $(document).ready(function() {
   $("form#new-contact").submit(function(event) {
@@ -16,13 +15,11 @@ $(document).ready(function() {
 
     var inputtedFirstName = $("input#new-first-name").val();
     var inputtedLastName = $("input#new-last-name").val();
-    var inputtedAddress = $("input#new-address").val();
-    var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedAddress);
+    var newContact = new Contact(inputtedFirstName, inputtedLastName);
 
     $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
 
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
   });
-});
-
-
 });

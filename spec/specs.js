@@ -10,5 +10,13 @@ describe('Contact', function() {
   var testContact = new Contact ("Erik","Tolentino");
   expect(testContact.fullName()).to.equal("Erik Tolentino");
   });
-
 });
+
+describe('Address', function() {
+  it("creates a new address with the given specification", function() {
+    var testAddress = new Address("123 Main St", "City", "State");
+    expect(testAddress.street).to.equal("123 Main St");
+    expect(testAddress.city).to.equal("City");
+    expect(testAddress.state).to.equal("State");
+  })
+})

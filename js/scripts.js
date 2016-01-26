@@ -1,12 +1,20 @@
 function Contact(firstName, lastName, address) {
   this.firstName = firstName;
   this.lastName = lastName;
-  this.address = address;
+  this.address = [address];
 }
 
 Contact.prototype.fullName = function() {
-  return this.firstName + " " + this.lastName + " " + this.address;
+  return this.firstName + " " + this.lastName;
 };
+
+function Address(street, city, state) {
+  this.street = street;
+  this.city = city;
+  this.state = state;
+}
+
+
 
 $(document).ready(function() {
   $("form#new-contact").submit(function(event) {
